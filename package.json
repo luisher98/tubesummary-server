@@ -26,6 +26,7 @@
     "google-auth-library": "^9.2.0",
     "googleapis": "^128.0.0",
     "openai": "^3.3.0",
+    "serverless": "^3.36.0",
     "ytdl-core": "^4.11.5"
   },
   "devDependencies": {
