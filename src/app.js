@@ -7,7 +7,7 @@ import videoInfo from "./info/videoInfo.mjs";
 import validateUrl from "./utils/validateUrl.mjs";
 import createRateLimiter from "./utils/rateLimiter.mjs";
 
-const port = 5000;
+// const port = 5000;
 
 const app = express();
 
@@ -55,6 +55,8 @@ app.get("/api/info", validateUrl, async (req, res) => {
 
 
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Server running on port ${port}`);
+// });
+
+export const handler = serverless(app);
