@@ -8,8 +8,10 @@
   "description": "API for the YouTube Summary App",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node ./src/app.js",
+    "dev": "nodemon ./src/app.js",
+    "build": "webpack --mode production",
+    "prod": "node dist/final.js"
   },
   "type": "module",
   "keywords": [
@@ -18,18 +20,21 @@
     "api"
   ],
   "dependencies": {
-    "axios": "^1.5.1",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "express-rate-limit": "^7.1.4",
     "ffmpeg-static": "^5.1.0",
     "fluent-ffmpeg": "^2.1.2",
     "google-auth-library": "^9.2.0",
     "googleapis": "^128.0.0",
     "openai": "^3.3.0",
     "serverless": "^3.36.0",
+    "webpack-node-externals": "^3.0.0",
     "ytdl-core": "^4.11.5"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
   }
 }
