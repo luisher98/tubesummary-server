@@ -7,7 +7,7 @@ const __dirname = path.dirname(__filename);
 
 export default {
   mode: "production",
-  entry: "./src/app.js",
+  entry: "./index.js",
   output: {
     path: path.join(__dirname, "dist"),
     publicPath: "/",

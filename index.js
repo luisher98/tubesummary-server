@@ -1,20 +1,20 @@
 import express from "express";
 import bodyParser from "body-parser";
+import serverless from "serverless-http";
 
-import outputSummary from "./summary/outputSummary.mjs";
-import videoInfo from "./info/videoInfo.mjs";
+import outputSummary from "./src/summary/outputSummary.mjs";
+import videoInfo from "./src/info/videoInfo.mjs";
 
-import validateUrl from "./utils/validateUrl.mjs";
-import createRateLimiter from "./utils/rateLimiter.mjs";
+import validateUrl from "./src/utils/validateUrl.mjs";
+import createRateLimiter from "./src/utils/rateLimiter.mjs";
 
 // const port = 5000;
 
 const app = express();
 
 app.use(bodyParser.json());
-app.use('/api/some-route', createRateLimiter(5, 1));
 
-app.get("/api/summary", validateUrl, async (req, res) => {
+app.get("/summary", validateUrl, async (req, res) => {
   const inputUrl = req.query.url;
   const words = req.query.words;
 
@@ -29,7 +29,7 @@ app.get("/api/summary", validateUrl, async (req, res) => {
   }
 });
 
-app.get("/api/info", validateUrl, async (req, res) => {
+app.get("/info", validateUrl, async (req, res) => {
   const inputUrl = req.query.url;
   
   try {

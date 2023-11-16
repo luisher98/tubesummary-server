@@ -1,0 +1,16 @@
+version: 1
+backend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: / # Set to your server's root directory
+    files:
+      - '**/*' # Include all files in the artifact
+  cache:
+    paths:
+      - node_modules/**/*
