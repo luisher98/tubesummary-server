@@ -1,4 +1,4 @@
-# TubeSummary server by Luis Hernández
+# TubeSummary API by Luis Hernández
 
 This is the API of a youtube summarization tool that utilizes OpenAI's GPT-3 language model to generate summaries of audio transcripts by providing the youtube link.
 
